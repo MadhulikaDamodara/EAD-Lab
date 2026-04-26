@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ES6 Features</title>
+
+    <style>
+        .right-box {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            text-align: right;
+            font-family: Arial;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="right-box">
+        <h4>Name: Damodara Lakshmi Madhulika</h4>
+        <h4>Roll No: 160124737144</h4>
+        <p><b>Check the console for output of ES6 features</b></p>
+    </div>
+
+    <script>
+        // Function Declaration
+        function greetDeclaration(name) {
+            return "Hello " + name + "!";
+        }
+        console.log(greetDeclaration("madhu"));
+
+        // Function Expression
+        const greetExpression = function(name) {
+            return "Hello " + name + "!";
+        };
+        console.log(greetExpression("madhu"));
+
+        // Arrow Function
+        const greetArrow = (name) => {
+            return "Hello " + name + "!";
+        };
+        console.log(greetArrow("madhu"));
+
+        // Arrow Function (short form)
+        const greetArrowShort = name => "Hello " + name + "!";
+        console.log(greetArrowShort("madhu"));
+
+        // Template Literal
+        const greetTemplate = (name) => `Hello ${name}!`;
+        console.log(greetTemplate("madhu"));
+
+        // Arrow function with calculation
+        const square = num => num * num;
+        console.log("Square of 5:", square(5));
+
+        // Array methods
+        let numbers = [1, 2, 3, 4, 5];
+
+        // map()
+        let doubled = numbers.map(n => n * 2);
+        console.log("Doubled Numbers:", doubled);
+
+        // filter()
+        let evenNumbers = numbers.filter(n => n % 2 === 0);
+        console.log("Even Numbers:", evenNumbers);
+
+        // forEach()
+        console.log("Numbers in array:");
+        numbers.forEach(n => console.log(n));
+    </script>
+
+</body>
+</html>

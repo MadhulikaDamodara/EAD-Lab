@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promise Example</title>
+</head>
+
+<body>
+
+    <div style="position:absolute; top:10px; right:20px; text-align:right;">
+        <h4>Name: Damodara Lakshmi Madhulika</h4>
+        <h4>Roll No: 160124737144</h4>
+        <p><b>Open Console</b></p>
+    </div>
+
+    <script>
+        // Creating a Promise
+        let myPromise = new Promise(function(resolve, reject) {
+
+            let success = true;   // change to false to test rejection
+
+            if (success) {
+                resolve("Task Completed");
+            } else {
+                reject("Task Failed");
+            }
+        });
+
+        // Consuming the Promise
+        myPromise
+            .then(function(result) {
+                console.log(result);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+    </script>
+
+</body>
+</html>

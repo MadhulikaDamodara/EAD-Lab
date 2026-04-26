@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array & Object Methods Demonstration</title>
+
+    <style>
+        .right-box {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            text-align: right;
+            font-family: Arial;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="right-box">
+        <h4>Name: Damodara Lakshmi Madhulika</h4>
+        <h4>Roll No: 160124737144</h4>
+        <p><b>Open Console to View Output</b></p>
+    </div>
+
+    <script>
+        // Create Object
+        let stu = {
+            name: "madhu",
+            age: 19
+        };
+
+        console.log("Original Object:", stu);
+
+        // Add property
+        stu.grade = "A";
+        console.log("After Adding grade:", stu);
+
+        // Update property
+        stu.age = 20;
+        console.log("After Updating age:", stu);
+
+        // Delete property
+        delete stu.grade;
+        console.log("After Deleting grade:", stu);
+
+        // Check property exists
+        console.log("Does 'name' exist?", stu.hasOwnProperty("name"));
+
+        // Create Array
+        let arr = [1, 2, [3, 4], 5];
+        console.log("Original Array:", arr);
+
+        // Array length
+        console.log("Array Length:", arr.length);
+
+        // toString
+        console.log("Array toString():", arr.toString());
+
+        // at()
+        console.log("Element at index 2:", arr.at(2));
+        console.log("Last element using at():", arr.at(-1));
+
+        // join()
+        console.log("Array join('-'):", arr.join("-"));
+
+        // pop()
+        let popped = arr.pop();
+        console.log("After pop():", arr, "Popped:", popped);
+
+        // push()
+        arr.push(6);
+        console.log("After push(6):", arr);
+
+        // shift()
+        let shifted = arr.shift();
+        console.log("After shift():", arr, "Shifted:", shifted);
+
+        // unshift()
+        arr.unshift(0);
+        console.log("After unshift(0):", arr);
+
+        // isArray()
+        console.log("Is array?", Array.isArray(arr));
+
+        // delete
+        delete arr[1];
+        console.log("After delete arr[1]:", arr);
+
+        // concat()
+        let arr2 = [7, 8, 9];
+        let concatenated = arr.concat(arr2);
+        console.log("After concat:", concatenated);
+
+        // copyWithin()
+        let copyArr = [1, 2, 3, 4, 5];
+        copyArr.copyWithin(0, 3, 5);
+        console.log("After copyWithin:", copyArr);
+
+        // flat()
+        let nestedArr = [1, [2, [3, 4]], 5];
+        console.log("Flat Array:", nestedArr.flat(2));
+
+        // slice()
+        let sliceArr = [10, 20, 30, 40, 50];
+        console.log("slice(1,4):", sliceArr.slice(1, 4));
+
+        // splice()
+        let spliceArr = [1, 2, 3, 4, 5];
+        let removed = spliceArr.splice(2, 2, "a", "b");
+        console.log("After splice:", spliceArr, "Removed:", removed);
+
+        // toSpliced() (modern method)
+        let originalArr = [1, 2, 3, 4, 5];
+        let newArr = originalArr.toSpliced(1, 2, 9, 10);
+        console.log("Original Array:", originalArr);
+        console.log("New Array (toSpliced):", newArr);
+
+        // Combine array inside object
+        stu.marks = [75, 88, 76];
+        console.log("Final Object with Array:", stu);
+    </script>
+
+</body>
+</html>

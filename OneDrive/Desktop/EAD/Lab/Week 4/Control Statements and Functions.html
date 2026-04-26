@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number Check</title>
+</head>
+<body>
+
+    <h1>Experiment 2: Prime Check (Control Statements)</h1>
+    <p id="result"></p>
+
+    <script>
+        // Number to check
+        let num = 17; 
+
+        // Function definition
+        function isPrime(n) {
+            // Control Statement: Basic check
+            if (n <= 1) {
+                return false;
+            }
+            // Control Statement: Loop
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) { // Control Statement: Condition check
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Display result using control statements and DOM
+        let resultMessage = "";
+        if (isPrime(num)) {
+            resultMessage = `${num} is a prime number.`;
+        } else {
+            resultMessage = `${num} is not a prime number.`;
+        }
+        
+        document.getElementById("result").innerHTML = resultMessage;
+    </script>
+
+</body>
+</html>

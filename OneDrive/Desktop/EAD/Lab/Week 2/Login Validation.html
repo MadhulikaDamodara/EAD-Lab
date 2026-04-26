@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Validation</title>
+
+    <script>
+        function validate() {
+            var u = document.getElementById("user").value;
+            var p = document.getElementById("pass").value;
+
+            if (u == "" || p == "") {
+                alert("Please fill all fields");
+            } else {
+                alert("Validation Successful");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Login Form</h2>
+
+    <p><b>Name :</b> Damodara Lakshmi Madhulika</p>
+    <p><b>Roll No :</b> 160124737144</p>
+
+    <form onsubmit="validate(); return false;">
+
+        Username:
+        <input type="text" id="user"><br><br>
+
+        Password:
+        <input type="password" id="pass"><br><br>
+
+        <input type="submit" value="Login">
+
+    </form>
+
+</body>
+</html>
