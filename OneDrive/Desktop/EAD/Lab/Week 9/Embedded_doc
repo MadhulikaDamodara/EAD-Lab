@@ -1,0 +1,60 @@
+User.js
+const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
+// Subdocument Schema (Address)
+const addressSchema = new Schema({
+  street: String,
+  city: String,
+  country: String,
+});
+// Main Schema (User)
+const userSchema = new Schema({
+  name: String,
+  email: String,
+  addresses: [addressSchema]   // 👈 Embedded subdocuments
+});
+// Model
+const User = model("User1", userSchema);
+module.exports = User;
+
+Server.js
+const mongoose = require("mongoose");
+const User = require("./models/User");
+async function run() {
+  try {
+    // Connect MongoDB
+    await mongoose.connect("mongodb://127.0.0.1:27017/testdb1");
+    console.log("Connected to MongoDB");
+    // Create User with embedded addresses
+    const user = new User({
+      name: "Swathi",
+      email: "Swathi@example.com",
+      addresses: [
+        { street: "123 Main St", city: "New York", country: "USA" },
+        { street: "456 Elm St", city: "Boston", country: "USA" }
+      ]
+    });
+    // Save document
+    await user.save();
+    console.log("User saved successfully!");
+    // Fetch all users
+    const users = await User.find();
+    console.log("All Users:", users);
+  } catch (err) {
+    console.log("Error:", err.message);
+  } finally {
+    // Disconnect MongoDB
+    await mongoose.disconnect();
+    console.log("Disconnected from MongoDB");
+  }
+}
+// Run function
+run();
+
+Execution steps
+Embedded_doc> npm init -y
+Embedded_doc> npm install mongoose
+Embedded_doc>mongod
+Mongodb server will run
+Open one more terminal
+Embedded_doc> node server.js
